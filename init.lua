@@ -70,3 +70,8 @@ local function light_level()
 end
 
 minetest.after(5, light_level)
+
+
+minetest.register_on_joinplayer(function(player)
+	player:override_day_night_ratio(nil)
+end)
