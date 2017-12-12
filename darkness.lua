@@ -64,6 +64,7 @@ end
 minetest.after(5, light_level)
 
 
+-- accounts for an engine bug which will be fixed in 0.5 release
 minetest.register_on_joinplayer(function(player)
 	player:override_day_night_ratio(nil)
 end)
