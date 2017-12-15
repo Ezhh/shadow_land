@@ -1,5 +1,5 @@
--- biome
 
+-- biome
 minetest.register_biome({
 	name = "shadow_land",
 	-- node_dust = "",
@@ -18,4 +18,17 @@ minetest.register_biome({
 	y_max = 200,
 	heat_point = 10,
 	humidity_point = 15,
+})
+
+
+-- grass
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {"shadow_land:dirt_with_shadow_grass"},
+	sidelen = 16,
+	fill_ratio = 0.1,
+	biomes = {"shadow_land"},
+	y_min = 1,
+	y_max = 31000,
+	decoration = "shadow_land:shadow_grass",
 })

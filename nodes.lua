@@ -108,3 +108,22 @@ minetest.register_node("shadow_land:dark_water_flowing", {
 		not_in_creative_inventory = 1, cools_lava = 1},
 	sounds = default.node_sound_water_defaults(),
 })
+
+
+
+minetest.register_node("shadow_land:shadow_grass", {
+	description = "Shadow Grass",
+	drawtype = "plantlike",
+	tiles = {"shadow_grass.png"},
+	waving = 1,
+	paramtype = "light",
+	sunlight_propagates = true,
+	buildable_to = true,
+	walkable = false,
+	groups = {snappy = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -3 / 16, 6 / 16},
+	},
+})
