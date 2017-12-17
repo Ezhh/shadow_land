@@ -9,7 +9,8 @@ end
 local function light_level()
 	for _, player in pairs(minetest.get_connected_players()) do
 		-- get light values
-		local natural_light = round((minetest.get_node_light(player:getpos(), nil))/15)
+		local node_light = minetest.get_node_light(player:getpos(), nil) or 15
+		local natural_light = round(node_light/15)
 		local current_light = round(player:get_day_night_ratio())
 		-- if player in shadow biome
 		if minetest.find_node_near(player:getpos(), 3, "shadow_land:dirt_with_shadow_grass") then
