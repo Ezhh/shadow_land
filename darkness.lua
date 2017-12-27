@@ -28,9 +28,9 @@ local function light_level()
 			end
 		-- if player left biome, but ratio needs to be adjusted
 		elseif current_light then
-			-- adjust immediately if night time, player is underground or
+			-- adjust immediately if player is underground or
 			-- if current light equals natural light
-			if natural_light < 0.14 or current_light == natural_light then
+			if natural_light == 0 or current_light == natural_light then
 				minetest.chat_send_player(player:get_player_name(), "4") -- test
 				player:override_day_night_ratio(nil)
 				current_light = nil
