@@ -115,6 +115,7 @@ minetest.register_node("shadow_land:shadow_grass", {
 	description = "Shadow Grass",
 	drawtype = "plantlike",
 	tiles = {"shadow_grass.png"},
+	inventory_image = "shadow_grass.png",
 	waving = 1,
 	paramtype = "light",
 	sunlight_propagates = true,
