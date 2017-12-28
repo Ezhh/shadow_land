@@ -127,3 +127,23 @@ minetest.register_node("shadow_land:shadow_grass", {
 		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -3 / 16, 6 / 16},
 	},
 })
+
+minetest.register_node("shadow_land:suntwist_plant", {
+	description = "Sun-twist Plant",
+	drawtype = "plantlike",
+	tiles = {"suntwist_plant.png"},
+	inventory_image = "suntwist_plant.png",
+	waving = 1,
+	paramtype = "light",
+	sunlight_propagates = true,
+	buildable_to = true,
+	walkable = false,
+	groups = {snappy = 3},
+	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-6 / 16, -0.5, -6 / 16, 6 / 16, -3 / 16, 6 / 16},
+	},
+	light_source = 5,
+	visual_scale = 0.8
+})

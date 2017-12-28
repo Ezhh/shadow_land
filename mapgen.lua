@@ -21,7 +21,7 @@ minetest.register_biome({
 })
 
 
--- grass
+-- plants
 minetest.register_decoration({
 	deco_type = "simple",
 	place_on = {"shadow_land:dirt_with_shadow_grass"},
@@ -32,3 +32,14 @@ minetest.register_decoration({
 	y_max = 31000,
 	decoration = "shadow_land:shadow_grass",
 })
+
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {"shadow_land:dirt_with_shadow_grass"},
+	sidelen = 16,
+	fill_ratio = 0.003,
+	biomes = {"shadow_land"},
+	y_min = 1,
+	y_max = 100,
+	decoration = "shadow_land:suntwist_plant",
+}) 
