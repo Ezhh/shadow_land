@@ -121,7 +121,7 @@ minetest.register_node("shadow_land:shadow_grass", {
 	sunlight_propagates = true,
 	buildable_to = true,
 	walkable = false,
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1, flora = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
 		type = "fixed",
@@ -139,7 +139,7 @@ minetest.register_node("shadow_land:suntwist_plant", {
 	sunlight_propagates = true,
 	buildable_to = true,
 	walkable = false,
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1, flower = 1, flora = 1},
 	sounds = default.node_sound_leaves_defaults(),
 	selection_box = {
 		type = "fixed",
