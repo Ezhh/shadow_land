@@ -3,15 +3,7 @@ minetest.register_node("shadow_land:shadow_stone", {
 	description = "Shadow Stone",
 	tiles = {"shadow_stone.png"},
 	groups = {cracky = 3, stone = 1},
-	drop = 'shadow_land:shadow_cobble',
-	sounds = default.node_sound_stone_defaults(),
-})
-
-minetest.register_node("shadow_land:shadow_cobble", {
-	description = "Shadow Cobble",
-	tiles = {"shadow_cobble.png"},
-	groups = {cracky = 3, stone = 2},
-	is_ground_content = false,
+	drop = 'default:cobble', -- need to change
 	sounds = default.node_sound_stone_defaults(),
 })
 
