@@ -9,7 +9,8 @@ end
 local function light_level()
 	for _, player in pairs(minetest.get_connected_players()) do
 		-- get light values
-		local natural_light = round((minetest.get_node_light(player:getpos(), nil))/15)
+		local node_light = minetest.get_node_light(player:getpos(), nil) or 15
+		local natural_light = round(node_light/15)
 		local current_light = round(player:get_day_night_ratio())
 		-- if player in shadow biome
 		if minetest.find_node_near(player:getpos(), 3, "shadow_land:dirt_with_shadow_grass") then
@@ -27,9 +28,9 @@ local function light_level()
 			end
 		-- if player left biome, but ratio needs to be adjusted
 		elseif current_light then
-			-- adjust immediately if night time, player is underground or
+			-- adjust immediately if player is underground or
 			-- if current light equals natural light
-			if natural_light < 0.14 or current_light == natural_light then
+			if natural_light == 0 or current_light == natural_light then
 				minetest.chat_send_player(player:get_player_name(), "4") -- test
 				player:override_day_night_ratio(nil)
 				current_light = nil
@@ -64,6 +65,7 @@ end
 minetest.after(5, light_level)
 
 
+-- accounts for an engine bug which will be fixed in 0.5 release
 minetest.register_on_joinplayer(function(player)
 	player:override_day_night_ratio(nil)
 end)
